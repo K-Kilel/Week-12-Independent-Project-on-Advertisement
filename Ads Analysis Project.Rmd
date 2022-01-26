@@ -26,91 +26,91 @@ The ability to monitor ads of an organization helps the organization understand 
 
 # Reading the Data
 
-```
+```{r}
 ## Loading our dataset
 library(data.table)
 ad_dataset <- fread('http://bit.ly/IPAdvertisingData')
 ```
 # Checking the Data
 
-```
+```{r}
 ## Viewing the dataset
-{View(ad_dataset)}
+View(ad_dataset)
 
 ## Previewing the top of our dataset
-{head(ad_dataset)}
+head(ad_dataset)
 
 ## Previewing the bottom of our dataset
-{tail(ad_dataset)}
+tail(ad_dataset)
 
 ```
 # Tidying the Dataset
 
-```
+```{r}
 ## Checking for Missing Values
-{colSums(is.na(ad_dataset))}
+colSums(is.na(ad_dataset))
 
 ### There are no missing values in our dataset.
 
 ## Checking for outliers
 
-{boxplot(ad_dataset$'Daily Time Spent on Site')}
-{boxplot(ad_dataset$Age)}
-{boxplot(ad_dataset$'Area Income')}
-{boxplot(ad_dataset$'Daily Internet Usage')}
+boxplot(ad_dataset$'Daily Time Spent on Site')
+boxplot(ad_dataset$Age)
+boxplot(ad_dataset$'Area Income')
+boxplot(ad_dataset$'Daily Internet Usage')
 
 ### There are outliers on Area Income. This is due to difference in earnings.
 ```
 # Univariate Analysis
 
-```
+```{r}
 ### Finding Mean
 
 #### Daily Time Spent on Site
-{ad_timespent_mean <- mean(ad_dataset$'Daily Time Spent on Site')}
-{ad_timespent_mean}
+ad_timespent_mean <- mean(ad_dataset$'Daily Time Spent on Site')
+ad_timespent_mean
 
 #### Age
 
-{ad_mean_age <- mean(ad_dataset$Age)}
-{ad_mean_age}
+ad_mean_age <- mean(ad_dataset$Age)
+ad_mean_age
 
 #### Area Income
-{ad_mean_income <- mean(ad_dataset$'Area Income')}
-{ad_mean_income}
+ad_mean_income <- mean(ad_dataset$'Area Income')
+ad_mean_income
 
 #### Daily Internet Usage
-{ad_mean_internetusage <- mean(ad_dataset$'Daily Internet Usage')}
-{ad_mean_internetusage}
+ad_mean_internetusage <- mean(ad_dataset$'Daily Internet Usage')
+ad_mean_internetusage
 
 #### Clicked on Ad
-{ad_mean_clickedad <- mean(ad_dataset$'Clicked on Ad')}
-{ad_mean_clickedad}
+ad_mean_clickedad <- mean(ad_dataset$'Clicked on Ad')
+ad_mean_clickedad
 ```
 
-```
+```{r}
 ### Finding Median
 
 #### Daily Time Spent on Site
-{ad_timespent_median <- median(ad_dataset$'Daily Time Spent on Site')}
-{ad_timespent_median}
+ad_timespent_median <- median(ad_dataset$'Daily Time Spent on Site')
+ad_timespent_median
 
 #### Age
 
-{ad_median_age <- median(ad_dataset$Age)}
-{ad_median_age}
+ad_median_age <- median(ad_dataset$Age)
+ad_median_age
 
 #### Area Income
-{ad_median_income <- median(ad_dataset$'Area Income')}
-{ad_median_income}
+ad_median_income <- median(ad_dataset$'Area Income')
+ad_median_income
 
 #### Daily Internet Usage
-{ad_median_internetusage <- median(ad_dataset$'Daily Internet Usage')}
-{ad_median_internetusage}
+ad_median_internetusage <- median(ad_dataset$'Daily Internet Usage')
+ad_median_internetusage
 
 ```
 
-```
+```{r}
 ### Finding Mode
 
 getmode <- function(v) {
@@ -119,118 +119,118 @@ getmode <- function(v) {
 }
 
 #### Daily Time Spent on Site
-{ad_timespent_mode <- getmode(ad_dataset$'Daily Time Spent on Site')}
-{ad_timespent_mode}
+ad_timespent_mode <- getmode(ad_dataset$'Daily Time Spent on Site')
+ad_timespent_mode
 
 #### Age
 
-{ad_mode_age <- getmode(ad_dataset$Age)}
-{ad_mode_age}
+ad_mode_age <- getmode(ad_dataset$Age)
+ad_mode_age
 
 #### Area Income
-{ad_mode_income <- getmode(ad_dataset$'Area Income')}
-{ad_mode_income}
+ad_mode_income <- getmode(ad_dataset$'Area Income')
+ad_mode_income
 
 #### Daily Internet Usage
-{ad_mode_internetusage <- getmode(ad_dataset$'Daily Internet Usage')}
-{ad_mode_internetusage}
+ad_mode_internetusage <- getmode(ad_dataset$'Daily Internet Usage')
+ad_mode_internetusage
 
 
 ```
 ## Measure of Dispersion
 
-```
+```{r}
 ### Finding Minimum
 
 #### Daily Time Spent on Site
-{ad_timespent_min <- min(ad_dataset$'Daily Time Spent on Site')}
-{ad_timespent_min}
+ad_timespent_min <- min(ad_dataset$'Daily Time Spent on Site')
+ad_timespent_min
 
 #### Age
 
-{ad_min_age <- min(ad_dataset$Age)}
-{ad_min_age}
+ad_min_age <- min(ad_dataset$Age)
+ad_min_age
 
 #### Area Income
-{ad_min_income <- min(ad_dataset$'Area Income')}
-{ad_min_income}
+ad_min_income <- min(ad_dataset$'Area Income')
+ad_min_income
 
 #### Daily Internet Usage
-{ad_min_internetusage <- min(ad_dataset$'Daily Internet Usage')}
-{ad_min_internetusage}
+ad_min_internetusage <- min(ad_dataset$'Daily Internet Usage')
+ad_min_internetusage
 
 #### Clicked on Ad
-{ad_min_clickedad <- min(ad_dataset$'Clicked on Ad')}
-{ad_min_clickedad}
+ad_min_clickedad <- min(ad_dataset$'Clicked on Ad')
+ad_min_clickedad
 ```
 
-```
+```{r}
 ### Finding Maximum
 
 #### Daily Time Spent on Site
-{ad_timespent_max <- max(ad_dataset$'Daily Time Spent on Site')}
-{ad_timespent_max}
+ad_timespent_max <- max(ad_dataset$'Daily Time Spent on Site')
+ad_timespent_max
 
 #### Age
 
-{ad_max_age <- max(ad_dataset$Age)}
-{ad_max_age}
+ad_max_age <- max(ad_dataset$Age)
+ad_max_age
 
 #### Area Income
-{ad_max_income <- max(ad_dataset$'Area Income')}
-{ad_max_income}
+ad_max_income <- max(ad_dataset$'Area Income')
+ad_max_income
 
 #### Daily Internet Usage
-{ad_max_internetusage <- max(ad_dataset$'Daily Internet Usage')}
-{ad_max_internetusage}
+ad_max_internetusage <- max(ad_dataset$'Daily Internet Usage')
+ad_max_internetusage
 
 ```
 
-```
+```{r}
 ### Finding Variance
 
 #### Daily Time Spent on Site
-{ad_timespent_var <- var(ad_dataset$'Daily Time Spent on Site')}
-{ad_timespent_var}
+ad_timespent_var <- var(ad_dataset$'Daily Time Spent on Site')
+ad_timespent_var
 
 #### Age
 
-{ad_var_age <- var(ad_dataset$Age)}
-{ad_var_age}
+ad_var_age <- var(ad_dataset$Age)
+ad_var_age
 
 #### Area Income
-{ad_var_income <- var(ad_dataset$'Area Income')}
-{ad_var_income}
+ad_var_income <- var(ad_dataset$'Area Income')
+ad_var_income
 
 #### Daily Internet Usage
-{ad_var_internetusage <- var(ad_dataset$'Daily Internet Usage')}
-{ad_var_internetusage}
+ad_var_internetusage <- var(ad_dataset$'Daily Internet Usage')
+ad_var_internetusage
 
 ```
-```
+```{r}
 ### Finding Standard Deviation
 
 #### Daily Time Spent on Site
-{ad_timespent_sd <- sd(ad_dataset$'Daily Time Spent on Site')}
-{ad_timespent_sd}
+ad_timespent_sd <- sd(ad_dataset$'Daily Time Spent on Site')
+ad_timespent_sd
 
 #### Age
 
-{ad_sd_age <- sd(ad_dataset$Age)}
-{ad_sd_age}
+ad_sd_age <- sd(ad_dataset$Age)
+ad_sd_age
 
 #### Area Income
-{ad_sd_income <- sd(ad_dataset$'Area Income')}
-{ad_sd_income}
+ad_sd_income <- sd(ad_dataset$'Area Income')
+ad_sd_income
 
 #### Daily Internet Usage
-{ad_sd_internetusage <- sd(ad_dataset$'Daily Internet Usage')}
-{ad_sd_internetusage}
+ad_sd_internetusage <- sd(ad_dataset$'Daily Internet Usage')
+ad_sd_internetusage
 
 ```
 # Univariate Graphical
 
-```
+```{r}
 ## Bar Plot to understand Clicked Ads
 
 Clicked_Ad_frequency <- table(ad_dataset$'Clicked on Ad')
@@ -241,7 +241,7 @@ barplot(Clicked_Ad_frequency)
 
 ```
 
-```
+```{r}
 ## Understanding the Age of the people that visited the site
 
 hist(ad_dataset$Age)
@@ -250,7 +250,7 @@ hist(ad_dataset$Age)
 
 ```
 
-```
+```{r}
 ## Understanding the income distribution of the people  who visited the site
 
 hist(ad_dataset$'Area Income')
@@ -258,7 +258,7 @@ hist(ad_dataset$'Area Income')
 ### Most of the people that visited the site had income above average.
 
 ```
-```
+```{r}
 ## Understanding the daily time spent on site
 
 hist(ad_dataset$'Daily Time Spent on Site')
@@ -270,7 +270,7 @@ hist(ad_dataset$'Daily Time Spent on Site')
 # Bivariate Analysis
 ## Covariance
 
-```
+```{r}
 # Finding covariance between age and daily time spent on the intenet
 
 age <- ad_dataset$Age
@@ -283,7 +283,7 @@ cov(age,time_spent)
 
 ```
 
-```
+```{r}
 
 # Finding Covariance between Area Income and Daily Internet Usage
 
@@ -297,11 +297,11 @@ cov(Income,Internet_usage)
 ```
 ## Graphical Representation
 
-```
+```{r}
 ## Scatter Plot of time spent on site and age
 
 
-{plot(time_spent, age, xlab="time_spent", ylab="age")}
+plot(time_spent, age, xlab="time_spent", ylab="age")
 
 ### Though not ver clear, but people between 70 to 90 spent a lot of time on site.
 
@@ -309,11 +309,11 @@ cov(Income,Internet_usage)
 
 
 
-```
+```{r}
 ## Scatter Plot of Area Inocme and daily internet usage
 
 
-{plot(Income, Internet_usage, xlab="Area Income", ylab="Daily Internet Usage")}
+plot(Income, Internet_usage, xlab="Area Income", ylab="Daily Internet Usage")
 
 ### Increase in income leads to an increase in daily internet usage
 
@@ -336,5 +336,4 @@ Increase in income increases daily internet usage.
 The organization should target people with higher income as they spend more on daily internet usage to click on ad.
 
 The older people spend more time on site and are therefore a good target to click on ad. 
-
 
